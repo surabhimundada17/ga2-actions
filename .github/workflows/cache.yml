@@ -22,7 +22,7 @@ jobs:
 
       - name: prime-cache-f5dc905
         run: |
-          if [ -n "${{ steps.cache-deps.outputs.cache-hit }}" ]; then
+          if [ "${{ steps.cache-deps.outputs.cache-hit }}" == 'true' ]; then
             echo "Cache hit"
           else
             echo "Cache miss"
